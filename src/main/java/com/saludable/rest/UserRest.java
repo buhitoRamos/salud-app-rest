@@ -63,6 +63,16 @@ public class UserRest {
 	public void actualizar(@RequestBody User user) {
 		userDao.save(user);
 	}
+	
+	/*
+	 * login devuelve un responseEntity, que seria la resuesta del endpoint
+	 * lo primero que hace es traer a todos los usuarios (no es un buen metodo si
+	 * la base de datos es grande, y compara el usuario y contraseña con el request
+	 * que llega del front y si lo encuentra devuelve un status 200ok con todos
+	 * los datos del usuario ya registrado.
+	 * si no lo encuentra devuelve una excepción con un codigo de error 400
+	 * BAD REQUEST.
+	 */
 
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody User user) {
