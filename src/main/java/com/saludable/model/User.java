@@ -1,10 +1,13 @@
 package com.saludable.model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,14 +24,14 @@ public class User {
 	@Column
 	private String apellido;
 	
-	@Column (name="documento")
-	private String dni;
+	@Column 
+	private String documento;
 	
 	@Column
 	private String sexo;
 	
 	@Column
-	private String fechaNacimiento;
+	private String fecha_nacimiento;
 	
 	@Column 
 	private String localidad;
@@ -70,12 +73,12 @@ public class User {
 		this.apellido = apellido;
 	}
 
-	public String getDni() {
-		return dni;
+	public String getDocumento() {
+		return documento;
 	}
 
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setDocumento(String documento) {
+		this.documento = documento;
 	}
 
 	public String getSexo() {
@@ -86,12 +89,12 @@ public class User {
 		this.sexo = sexo;
 	}
 
-	public String getFechaNacimiento() {
-		return fechaNacimiento;
+	public String getFecha_nacimiento() {
+		return fecha_nacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFecha_nacimiento(String fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
 	}
 
 	public String getLocalidad() {

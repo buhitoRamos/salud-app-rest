@@ -2,6 +2,9 @@ package com.saludable.model;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +12,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -21,119 +27,102 @@ public class Food {
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private Integer id;
 	
-
-	
-	 @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	    private User user;
-	
+	@Column
+	private int user_id;
 	
 	@Column
-	private String tipoComida;
+	private String tipo_comida;
 	
 	@Column
-	private String comidaPrincipal;
+	private String comida_principal;
+	
+	@Column
+	private String comida_secundaria;
 	
 	@Column
 	private String bebida;
 	
 	@Column	
-	private Boolean postre; 
+	private Boolean ingirio_postre; 
 	
 	@Column
-	private String comioPostre;
-	@Column(name="otro_alimento")
-	private Boolean otroAlimento;
+	private String postre;	
 	
-	@Column(name="que_alimento")
-	private String queAlimento;
 	
 	@Column
 	private Boolean hambre;
 	
-	public Integer getId() {
-		return id;
+	@Column
+	private String fecha_hora;
+	public int getUser_id() {
+		return user_id;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
-
 	
-
-	public User getUser() {
-		return user;
+	
+	
+	public String getFecha_hora() {
+		return fecha_hora;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setFecha_hora(String fecha_hora) {
+		this.fecha_hora = fecha_hora;
 	}
-
-
-	public String getTipoComida() {
-		return tipoComida;
-	}
-
-	public void setTipoComida(String tipoComida) {
-		this.tipoComida = tipoComida;
-	}
-
-	public String getComidaPrincipal() {
-		return comidaPrincipal;
-	}
-
-	public void setComidaPrincipal(String comidaPrincipal) {
-		this.comidaPrincipal = comidaPrincipal;
-	}
-
 	public String getBebida() {
 		return bebida;
 	}
-
-	public void setBebida(String bebida) {
-		this.bebida = bebida;
+	public String getComida_principal() {
+		return comida_principal;
 	}
-
-	public Boolean getPostre() {
-		return postre;
+	public String getComida_secundaria() {
+		return comida_secundaria;
 	}
-
-	public void setPostre(Boolean postre) {
-		this.postre = postre;
-	}
-
-	public String getComioPostre() {
-		return comioPostre;
-	}
-
-	public void setComioPostre(String comioPostre) {
-		this.comioPostre = comioPostre;
-	}
-
-	public Boolean getOtroAlimento() {
-		return otroAlimento;
-	}
-
-	public void setOtroAlimento(Boolean otroAlimento) {
-		this.otroAlimento = otroAlimento;
-	}
-
-	public String getQueAlimento() {
-		return queAlimento;
-	}
-
-	public void setQueAlimento(String queAlimento) {
-		this.queAlimento = queAlimento;
-	}
-
-	public Boolean getHambre() {
+	 public Boolean getHambre() {
 		return hambre;
 	}
-
+	 public Integer getId() {
+		return id;
+	}
+	 public Boolean getIngirio_postre() {
+		return ingirio_postre;
+	}
+	
+	 public String getPostre() {
+		return postre;
+	}
+	 
+	 public String getTipo_comida() {
+		return tipo_comida;
+	}
+	
+	 public void setBebida(String bebida) {
+		this.bebida = bebida;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	
+	public void setTipo_comida(String tipo_comida) {
+		this.tipo_comida = tipo_comida;
+	}
+	public void setComida_principal(String comida_principal) {
+		this.comida_principal = comida_principal;
+	}
+	public void setComida_secundaria(String comida_secundaria) {
+		this.comida_secundaria = comida_secundaria;
+	}
+	public void setIngirio_postre(Boolean ingirio_postre) {
+		this.ingirio_postre = ingirio_postre;
+	}
+	public void setPostre(String postre) {
+		this.postre = postre;
+	}
+	
 	public void setHambre(Boolean hambre) {
 		this.hambre = hambre;
 	}
-
-	
-	
 	
 
 }

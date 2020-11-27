@@ -34,6 +34,7 @@ public class UserRest {
 
 	@PostMapping("/guardar")
 	public ResponseEntity<?> guardar(@RequestBody User user) {
+		System.out.println(user);
 		List<User> lista = userDao.findAll();
 		boolean encontrado = false;
 		for (User user2 : lista) {
