@@ -1,34 +1,34 @@
 package com.saludable.model;
 
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="comida")
 public class Food {
+	
+	
 	
 	@Id
 	@Column(name="id_comida")
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private Integer id;
 	
+
+	
 	@Column
 	private int user_id;
+	
+	private String nombre;
+	
+	private String apellido;
 	
 	@Column
 	private String tipo_comida;
@@ -95,6 +95,12 @@ public class Food {
 	 public String getTipo_comida() {
 		return tipo_comida;
 	}
+	 public String getApellido() {
+		return apellido;
+	}
+	 public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
 	
 	 public void setBebida(String bebida) {
 		this.bebida = bebida;
@@ -123,6 +129,14 @@ public class Food {
 	public void setHambre(Boolean hambre) {
 		this.hambre = hambre;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	
 
 }

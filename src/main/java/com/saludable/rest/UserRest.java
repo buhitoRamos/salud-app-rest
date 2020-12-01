@@ -43,6 +43,7 @@ public class UserRest {
 			}
 
 		}
+		
 		if (!encontrado) {
 			userDao.save(user);
 			return ResponseEntity.status(HttpStatus.OK).body(null);
